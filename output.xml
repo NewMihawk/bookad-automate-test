@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.13.3 on darwin)" generated="20260220 17:00:00.952" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Login" source="/Users/wisarutchoksawat/Documents/Document-coding/bookad/bookad-automated-test/tests/test_login.robot">
+<test id="s1-t1" name="Test Login With Valid Credentials" line="10">
+<kw name="Open BookAd Website" library="keywords" type="SETUP">
+<doc>Opens the BookAd website in the browser</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260220 17:00:01.072" level="INFO">Opening browser 'chrome' to base url 'https://staging.bookad.co/'.</msg>
+<status status="PASS" starttime="20260220 17:00:01.071" endtime="20260220 17:00:07.194"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260220 17:00:07.194" endtime="20260220 17:00:07.699"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20260220 17:00:07.699" endtime="20260220 17:00:07.701"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260220 17:00:09.702" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260220 17:00:07.701" endtime="20260220 17:00:09.702"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Wait Until Page Contains</arg>
+<arg>BookAd</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>BookAd</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260220 17:00:09.703" endtime="20260220 17:00:09.713"/>
+</kw>
+<msg timestamp="20260220 17:00:09.713" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20260220 17:00:09.702" endtime="20260220 17:00:09.713"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${status}</arg>
+<arg>Wait Until Location Contains</arg>
+<arg>bookad</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20260220 17:00:09.713" endtime="20260220 17:00:09.714"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:01.071" endtime="20260220 17:00:09.714"/>
+</kw>
+<kw name="Navigate To Login Page" library="keywords">
+<doc>Navigates to the login page</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260220 17:00:09.714" level="INFO">Clicking element '//a[contains(text(), 'เข้าสู่ระบบ')] | //button[contains(text(), 'เข้าสู่ระบบ')] | //*[@id='login'] | //*[contains(@class, 'login')]'.</msg>
+<status status="PASS" starttime="20260220 17:00:09.714" endtime="20260220 17:00:09.821"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${form_visible}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_FORM}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LOGIN_FORM}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<msg timestamp="20260220 17:00:12.571" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-567.png"&gt;&lt;img src="selenium-screenshot-567.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20260220 17:00:12.571" level="FAIL">Element '//form[contains(@class, 'login')] | //*[@id='login-form'] | //div[contains(@class, 'login-form')]' did not appear in 2 seconds.</msg>
+<status status="FAIL" starttime="20260220 17:00:09.821" endtime="20260220 17:00:12.573"/>
+</kw>
+<msg timestamp="20260220 17:00:12.573" level="INFO">${form_visible} = False</msg>
+<status status="PASS" starttime="20260220 17:00:09.821" endtime="20260220 17:00:12.573"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${input_visible}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//input</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//input</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260220 17:00:12.573" endtime="20260220 17:00:12.580"/>
+</kw>
+<msg timestamp="20260220 17:00:12.580" level="INFO">${input_visible} = True</msg>
+<status status="PASS" starttime="20260220 17:00:12.573" endtime="20260220 17:00:12.580"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${form_visible} and not ${input_visible}</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20260220 17:00:12.580" endtime="20260220 17:00:12.580"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:09.714" endtime="20260220 17:00:12.580"/>
+</kw>
+<kw name="Login With Credentials" library="keywords">
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Performs login with provided credentials</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260220 17:00:13.080" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20260220 17:00:12.580" endtime="20260220 17:00:13.081"/>
+</kw>
+<kw name="Wait For Email Input" library="keywords">
+<var>${email_found}</var>
+<doc>Waits for email/username input field and stores the found locator</doc>
+<kw name="Create List" library="BuiltIn">
+<var>${locators}</var>
+<arg>//input[@type='email']</arg>
+<arg>//input[@name='email']</arg>
+<arg>//input[@name='username']</arg>
+<arg>//input[@name='user_email']</arg>
+<arg>//input[@id='email']</arg>
+<arg>//input[@id='username']</arg>
+<arg>//input[@id='user_email']</arg>
+<arg>//input[@id='user-email']</arg>
+<arg>//input[contains(@placeholder, 'email') or contains(@placeholder, 'Email') or contains(@placeholder, 'อีเมล')]</arg>
+<arg>//input[contains(@placeholder, 'username') or contains(@placeholder, 'Username')]</arg>
+<arg>//input[contains(@class, 'email') or contains(@class, 'username')]</arg>
+<arg>//form//input[@type='text'][1]</arg>
+<arg>//form//input[not(@type='password')][1]</arg>
+<arg>(//input[@type='text'])[1]</arg>
+<arg>(//input[not(@type='password')])[1]</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20260220 17:00:13.082" level="INFO">${locators} = ["//input[@type='email']", "//input[@name='email']", "//input[@name='username']", "//input[@name='user_email']", "//input[@id='email']", "//input[@id='username']", "//input[@id='user_email']", "//inpu...</msg>
+<status status="PASS" starttime="20260220 17:00:13.081" endtime="20260220 17:00:13.082"/>
+</kw>
+<for flavor="IN">
+<var>${locator}</var>
+<value>@{locators}</value>
+<iter>
+<var name="${locator}">//input[@type='email']</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${found}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:13.082" endtime="20260220 17:00:13.096"/>
+</kw>
+<msg timestamp="20260220 17:00:13.096" level="INFO">${found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:13.082" endtime="20260220 17:00:13.096"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>Set Test Variable</arg>
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20260220 17:00:13.097" level="INFO">${EMAIL_INPUT_FOUND} = //input[@type='email']</msg>
+<status status="PASS" starttime="20260220 17:00:13.097" endtime="20260220 17:00:13.097"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:13.096" endtime="20260220 17:00:13.097"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>${found}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<msg timestamp="20260220 17:00:13.098" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20260220 17:00:13.098" endtime="20260220 17:00:13.098"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:13.082" endtime="20260220 17:00:13.098"/>
+</iter>
+<status status="PASS" starttime="20260220 17:00:13.082" endtime="20260220 17:00:13.098"/>
+</for>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:13.098" endtime="20260220 17:00:13.098"/>
+</kw>
+<msg timestamp="20260220 17:00:13.098" level="INFO">${email_found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:13.081" endtime="20260220 17:00:13.098"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${email_found}</arg>
+<arg>Debug Login Page Elements</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20260220 17:00:13.098" endtime="20260220 17:00:13.098"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${email_found}</arg>
+<arg>Email/Username input field not found. Please check the login page structure.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260220 17:00:13.098" endtime="20260220 17:00:13.098"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260220 17:00:13.098" endtime="20260220 17:00:13.366"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:13.366" endtime="20260220 17:00:13.384"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20260220 17:00:13.384" endtime="20260220 17:00:13.404"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20260220 17:00:13.404" endtime="20260220 17:00:13.436"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${username}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>${username}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260220 17:00:13.437" level="INFO">Typing text 'auto_test@mail.com' into text field '//input[@type='email']'.</msg>
+<status status="PASS" starttime="20260220 17:00:13.437" endtime="20260220 17:00:13.585"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:13.436" endtime="20260220 17:00:13.585"/>
+</kw>
+<kw name="Wait For Password Input" library="keywords">
+<var>${password_found}</var>
+<doc>Waits for password input field and stores the found locator</doc>
+<kw name="Create List" library="BuiltIn">
+<var>${locators}</var>
+<arg>//input[@type='password']</arg>
+<arg>//input[@name='password']</arg>
+<arg>//input[@name='user_password']</arg>
+<arg>//input[@id='password']</arg>
+<arg>//input[@id='user_password']</arg>
+<arg>//input[@id='user-password']</arg>
+<arg>//input[contains(@placeholder, 'password') or contains(@placeholder, 'Password') or contains(@placeholder, 'รหัสผ่าน')]</arg>
+<arg>//input[contains(@class, 'password')]</arg>
+<arg>//form//input[@type='password']</arg>
+<arg>(//input[@type='password'])[1]</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20260220 17:00:13.585" level="INFO">${locators} = ["//input[@type='password']", "//input[@name='password']", "//input[@name='user_password']", "//input[@id='password']", "//input[@id='user_password']", "//input[@id='user-password']", "//input[contain...</msg>
+<status status="PASS" starttime="20260220 17:00:13.585" endtime="20260220 17:00:13.586"/>
+</kw>
+<for flavor="IN">
+<var>${locator}</var>
+<value>@{locators}</value>
+<iter>
+<var name="${locator}">//input[@type='password']</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${found}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:13.586" endtime="20260220 17:00:13.599"/>
+</kw>
+<msg timestamp="20260220 17:00:13.599" level="INFO">${found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:13.586" endtime="20260220 17:00:13.599"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>Set Test Variable</arg>
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20260220 17:00:13.600" level="INFO">${PASSWORD_INPUT_FOUND} = //input[@type='password']</msg>
+<status status="PASS" starttime="20260220 17:00:13.599" endtime="20260220 17:00:13.600"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:13.599" endtime="20260220 17:00:13.600"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>${found}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<msg timestamp="20260220 17:00:13.600" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20260220 17:00:13.600" endtime="20260220 17:00:13.600"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:13.586" endtime="20260220 17:00:13.600"/>
+</iter>
+<status status="PASS" starttime="20260220 17:00:13.586" endtime="20260220 17:00:13.600"/>
+</for>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:13.600" endtime="20260220 17:00:13.600"/>
+</kw>
+<msg timestamp="20260220 17:00:13.600" level="INFO">${password_found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:13.585" endtime="20260220 17:00:13.600"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${password_found}</arg>
+<arg>Password input field not found. Please check the login page structure.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260220 17:00:13.600" endtime="20260220 17:00:13.600"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260220 17:00:13.600" endtime="20260220 17:00:13.879"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:13.879" endtime="20260220 17:00:13.888"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20260220 17:00:13.888" endtime="20260220 17:00:13.897"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20260220 17:00:13.897" endtime="20260220 17:00:13.911"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${password}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260220 17:00:13.912" level="INFO">Typing text 'Muze6565' into text field '//input[@type='password']'.</msg>
+<status status="PASS" starttime="20260220 17:00:13.911" endtime="20260220 17:00:13.956"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:13.911" endtime="20260220 17:00:13.956"/>
+</kw>
+<kw name="Wait For Submit Button" library="keywords">
+<var>${submit_found}</var>
+<doc>Waits for submit button and stores the found locator</doc>
+<kw name="Create List" library="BuiltIn">
+<var>${locators}</var>
+<arg>//button[@type='submit']</arg>
+<arg>//button[contains(text(), 'เข้าสู่ระบบ')]</arg>
+<arg>//button[contains(text(), 'Login')]</arg>
+<arg>//button[contains(text(), 'Sign in')]</arg>
+<arg>//button[contains(text(), 'Log in')]</arg>
+<arg>//button[contains(@class, 'login') or contains(@class, 'submit')]</arg>
+<arg>//input[@type='submit']</arg>
+<arg>//form//button[last()]</arg>
+<arg>//form//button[@type='submit']</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20260220 17:00:13.957" level="INFO">${locators} = ["//button[@type='submit']", "//button[contains(text(), 'เข้าสู่ระบบ')]", "//button[contains(text(), 'Login')]", "//button[contains(text(), 'Sign in')]", "//button[contains(text(), 'Log in')]", "//but...</msg>
+<status status="PASS" starttime="20260220 17:00:13.957" endtime="20260220 17:00:13.957"/>
+</kw>
+<for flavor="IN">
+<var>${locator}</var>
+<value>@{locators}</value>
+<iter>
+<var name="${locator}">//button[@type='submit']</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${found}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20260220 17:00:16.693" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-568.png"&gt;&lt;img src="selenium-screenshot-568.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20260220 17:00:16.693" level="FAIL">Element '//button[@type='submit']' not visible after 2 seconds.</msg>
+<status status="FAIL" starttime="20260220 17:00:13.957" endtime="20260220 17:00:16.694"/>
+</kw>
+<msg timestamp="20260220 17:00:16.694" level="INFO">${found} = False</msg>
+<status status="PASS" starttime="20260220 17:00:13.957" endtime="20260220 17:00:16.694"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>Set Test Variable</arg>
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20260220 17:00:16.694" endtime="20260220 17:00:16.694"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>${found}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<status status="PASS" starttime="20260220 17:00:16.694" endtime="20260220 17:00:16.694"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:13.957" endtime="20260220 17:00:16.694"/>
+</iter>
+<iter>
+<var name="${locator}">//button[contains(text(), 'เข้าสู่ระบบ')]</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${found}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:16.694" endtime="20260220 17:00:16.703"/>
+</kw>
+<msg timestamp="20260220 17:00:16.703" level="INFO">${found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:16.694" endtime="20260220 17:00:16.703"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>Set Test Variable</arg>
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20260220 17:00:16.704" level="INFO">${SUBMIT_BUTTON_FOUND} = //button[contains(text(), 'เข้าสู่ระบบ')]</msg>
+<status status="PASS" starttime="20260220 17:00:16.703" endtime="20260220 17:00:16.704"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:16.703" endtime="20260220 17:00:16.704"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>${found}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<msg timestamp="20260220 17:00:16.704" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20260220 17:00:16.704" endtime="20260220 17:00:16.704"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:16.694" endtime="20260220 17:00:16.704"/>
+</iter>
+<status status="PASS" starttime="20260220 17:00:13.957" endtime="20260220 17:00:16.704"/>
+</for>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:16.704" endtime="20260220 17:00:16.704"/>
+</kw>
+<msg timestamp="20260220 17:00:16.704" level="INFO">${submit_found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:13.956" endtime="20260220 17:00:16.704"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${submit_found}</arg>
+<arg>Submit button not found. Please check the login page structure.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260220 17:00:16.704" endtime="20260220 17:00:16.704"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260220 17:00:16.704" endtime="20260220 17:00:16.963"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:16.963" endtime="20260220 17:00:16.971"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_enabled}</var>
+<arg>Element Should Be Enabled</arg>
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20260220 17:00:16.972" endtime="20260220 17:00:16.981"/>
+</kw>
+<msg timestamp="20260220 17:00:16.981" level="INFO">${is_enabled} = True</msg>
+<status status="PASS" starttime="20260220 17:00:16.972" endtime="20260220 17:00:16.981"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${is_enabled}</arg>
+<arg>Click Element</arg>
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Submit button is disabled - form validation preventing submission (expected for empty credentials)</arg>
+<arg>level=INFO</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260220 17:00:16.982" level="INFO">Clicking element '//button[contains(text(), 'เข้าสู่ระบบ')]'.</msg>
+<status status="PASS" starttime="20260220 17:00:16.981" endtime="20260220 17:00:17.013"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:16.981" endtime="20260220 17:00:17.013"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260220 17:00:17.514" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20260220 17:00:17.013" endtime="20260220 17:00:17.514"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:12.580" endtime="20260220 17:00:17.514"/>
+</kw>
+<kw name="Verify Login Success" library="keywords">
+<doc>Verifies that login was successful by checking multiple conditions quickly</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${form_gone}</var>
+<arg>Wait Until Page Does Not Contain Element</arg>
+<arg>${LOGIN_FORM}</arg>
+<arg>timeout=3s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>${LOGIN_FORM}</arg>
+<arg>timeout=3s</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20260220 17:00:17.514" endtime="20260220 17:00:19.568"/>
+</kw>
+<msg timestamp="20260220 17:00:19.568" level="INFO">${form_gone} = True</msg>
+<status status="PASS" starttime="20260220 17:00:17.514" endtime="20260220 17:00:19.568"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${form_gone}</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<msg timestamp="20260220 17:00:19.568" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20260220 17:00:19.568" endtime="20260220 17:00:19.568"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:19.568" endtime="20260220 17:00:19.568"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${not_login_text}</var>
+<arg>Page Should Not Contain</arg>
+<arg>เข้าสู่ระบบ</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:19.568" endtime="20260220 17:00:19.568"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${not_login_text}</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:19.569" endtime="20260220 17:00:19.569"/>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:19.569" endtime="20260220 17:00:19.569"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${url_changed}</var>
+<arg>'login' not in '${current_url}'.lower() and 'เข้าสู่ระบบ' not in '${current_url}'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:19.569" endtime="20260220 17:00:19.569"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${url_changed}</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:19.569" endtime="20260220 17:00:19.569"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${form_still_exists}</var>
+<arg>Page Should Contain Element</arg>
+<arg>${LOGIN_FORM}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:19.569" endtime="20260220 17:00:19.569"/>
+</kw>
+<kw name="Should Not Be True" library="BuiltIn">
+<arg>${form_still_exists}</arg>
+<arg>Login form is still visible. Login may have failed.</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:19.569" endtime="20260220 17:00:19.569"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:17.514" endtime="20260220 17:00:19.569"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Take Screenshot On Failure</arg>
+<arg>AND</arg>
+<arg>Close BookAd Website</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Take Screenshot On Failure" library="keywords">
+<doc>Takes a screenshot when a test fails</doc>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>screenshots/failure-{index}.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20260220 17:00:19.569" endtime="20260220 17:00:19.569"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:19.569" endtime="20260220 17:00:19.569"/>
+</kw>
+<kw name="Close BookAd Website" library="keywords">
+<doc>Closes the browser</doc>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20260220 17:00:19.569" endtime="20260220 17:00:19.692"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:19.569" endtime="20260220 17:00:19.692"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:19.569" endtime="20260220 17:00:19.692"/>
+</kw>
+<doc>Test login with valid username and password</doc>
+<tag>login</tag>
+<tag>smoke</tag>
+<status status="PASS" starttime="20260220 17:00:01.071" endtime="20260220 17:00:19.692"/>
+</test>
+<test id="s1-t2" name="Test Login With Invalid Credentials" line="17">
+<kw name="Open BookAd Website" library="keywords" type="SETUP">
+<doc>Opens the BookAd website in the browser</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20260220 17:00:19.693" level="INFO">Opening browser 'chrome' to base url 'https://staging.bookad.co/'.</msg>
+<status status="PASS" starttime="20260220 17:00:19.693" endtime="20260220 17:00:20.862"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20260220 17:00:20.864" endtime="20260220 17:00:21.759"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20260220 17:00:21.759" endtime="20260220 17:00:21.761"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260220 17:00:23.762" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20260220 17:00:21.761" endtime="20260220 17:00:23.762"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Wait Until Page Contains</arg>
+<arg>BookAd</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>BookAd</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20260220 17:00:23.762" endtime="20260220 17:00:23.774"/>
+</kw>
+<msg timestamp="20260220 17:00:23.774" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20260220 17:00:23.762" endtime="20260220 17:00:23.774"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${status}</arg>
+<arg>Wait Until Location Contains</arg>
+<arg>bookad</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20260220 17:00:23.774" endtime="20260220 17:00:23.775"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:19.693" endtime="20260220 17:00:23.775"/>
+</kw>
+<kw name="Navigate To Login Page" library="keywords">
+<doc>Navigates to the login page</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260220 17:00:23.776" level="INFO">Clicking element '//a[contains(text(), 'เข้าสู่ระบบ')] | //button[contains(text(), 'เข้าสู่ระบบ')] | //*[@id='login'] | //*[contains(@class, 'login')]'.</msg>
+<status status="PASS" starttime="20260220 17:00:23.775" endtime="20260220 17:00:23.818"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${form_visible}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${LOGIN_FORM}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${LOGIN_FORM}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<msg timestamp="20260220 17:00:26.504" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-569.png"&gt;&lt;img src="selenium-screenshot-569.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20260220 17:00:26.505" level="FAIL">Element '//form[contains(@class, 'login')] | //*[@id='login-form'] | //div[contains(@class, 'login-form')]' did not appear in 2 seconds.</msg>
+<status status="FAIL" starttime="20260220 17:00:23.818" endtime="20260220 17:00:26.505"/>
+</kw>
+<msg timestamp="20260220 17:00:26.505" level="INFO">${form_visible} = False</msg>
+<status status="PASS" starttime="20260220 17:00:23.818" endtime="20260220 17:00:26.505"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${input_visible}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>//input</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//input</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260220 17:00:26.505" endtime="20260220 17:00:26.514"/>
+</kw>
+<msg timestamp="20260220 17:00:26.514" level="INFO">${input_visible} = True</msg>
+<status status="PASS" starttime="20260220 17:00:26.505" endtime="20260220 17:00:26.514"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${form_visible} and not ${input_visible}</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20260220 17:00:26.514" endtime="20260220 17:00:26.514"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:23.775" endtime="20260220 17:00:26.514"/>
+</kw>
+<kw name="Login With Credentials" library="keywords">
+<arg>invalid@example.com</arg>
+<arg>wrongpassword</arg>
+<doc>Performs login with provided credentials</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260220 17:00:27.017" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20260220 17:00:26.514" endtime="20260220 17:00:27.017"/>
+</kw>
+<kw name="Wait For Email Input" library="keywords">
+<var>${email_found}</var>
+<doc>Waits for email/username input field and stores the found locator</doc>
+<kw name="Create List" library="BuiltIn">
+<var>${locators}</var>
+<arg>//input[@type='email']</arg>
+<arg>//input[@name='email']</arg>
+<arg>//input[@name='username']</arg>
+<arg>//input[@name='user_email']</arg>
+<arg>//input[@id='email']</arg>
+<arg>//input[@id='username']</arg>
+<arg>//input[@id='user_email']</arg>
+<arg>//input[@id='user-email']</arg>
+<arg>//input[contains(@placeholder, 'email') or contains(@placeholder, 'Email') or contains(@placeholder, 'อีเมล')]</arg>
+<arg>//input[contains(@placeholder, 'username') or contains(@placeholder, 'Username')]</arg>
+<arg>//input[contains(@class, 'email') or contains(@class, 'username')]</arg>
+<arg>//form//input[@type='text'][1]</arg>
+<arg>//form//input[not(@type='password')][1]</arg>
+<arg>(//input[@type='text'])[1]</arg>
+<arg>(//input[not(@type='password')])[1]</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20260220 17:00:27.019" level="INFO">${locators} = ["//input[@type='email']", "//input[@name='email']", "//input[@name='username']", "//input[@name='user_email']", "//input[@id='email']", "//input[@id='username']", "//input[@id='user_email']", "//inpu...</msg>
+<status status="PASS" starttime="20260220 17:00:27.018" endtime="20260220 17:00:27.019"/>
+</kw>
+<for flavor="IN">
+<var>${locator}</var>
+<value>@{locators}</value>
+<iter>
+<var name="${locator}">//input[@type='email']</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${found}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:27.020" endtime="20260220 17:00:27.045"/>
+</kw>
+<msg timestamp="20260220 17:00:27.046" level="INFO">${found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:27.019" endtime="20260220 17:00:27.046"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>Set Test Variable</arg>
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20260220 17:00:27.047" level="INFO">${EMAIL_INPUT_FOUND} = //input[@type='email']</msg>
+<status status="PASS" starttime="20260220 17:00:27.046" endtime="20260220 17:00:27.048"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:27.046" endtime="20260220 17:00:27.048"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>${found}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<msg timestamp="20260220 17:00:27.048" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20260220 17:00:27.048" endtime="20260220 17:00:27.048"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:27.019" endtime="20260220 17:00:27.048"/>
+</iter>
+<status status="PASS" starttime="20260220 17:00:27.019" endtime="20260220 17:00:27.048"/>
+</for>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:27.048" endtime="20260220 17:00:27.048"/>
+</kw>
+<msg timestamp="20260220 17:00:27.048" level="INFO">${email_found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:27.018" endtime="20260220 17:00:27.048"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>not ${email_found}</arg>
+<arg>Debug Login Page Elements</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20260220 17:00:27.048" endtime="20260220 17:00:27.048"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${email_found}</arg>
+<arg>Email/Username input field not found. Please check the login page structure.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260220 17:00:27.048" endtime="20260220 17:00:27.049"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260220 17:00:27.049" endtime="20260220 17:00:27.316"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:27.316" endtime="20260220 17:00:27.329"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20260220 17:00:27.329" endtime="20260220 17:00:27.342"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20260220 17:00:27.343" endtime="20260220 17:00:27.363"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${username}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>${username}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_INPUT_FOUND}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260220 17:00:27.364" level="INFO">Typing text 'invalid@example.com' into text field '//input[@type='email']'.</msg>
+<status status="PASS" starttime="20260220 17:00:27.364" endtime="20260220 17:00:27.545"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:27.363" endtime="20260220 17:00:27.545"/>
+</kw>
+<kw name="Wait For Password Input" library="keywords">
+<var>${password_found}</var>
+<doc>Waits for password input field and stores the found locator</doc>
+<kw name="Create List" library="BuiltIn">
+<var>${locators}</var>
+<arg>//input[@type='password']</arg>
+<arg>//input[@name='password']</arg>
+<arg>//input[@name='user_password']</arg>
+<arg>//input[@id='password']</arg>
+<arg>//input[@id='user_password']</arg>
+<arg>//input[@id='user-password']</arg>
+<arg>//input[contains(@placeholder, 'password') or contains(@placeholder, 'Password') or contains(@placeholder, 'รหัสผ่าน')]</arg>
+<arg>//input[contains(@class, 'password')]</arg>
+<arg>//form//input[@type='password']</arg>
+<arg>(//input[@type='password'])[1]</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20260220 17:00:27.545" level="INFO">${locators} = ["//input[@type='password']", "//input[@name='password']", "//input[@name='user_password']", "//input[@id='password']", "//input[@id='user_password']", "//input[@id='user-password']", "//input[contain...</msg>
+<status status="PASS" starttime="20260220 17:00:27.545" endtime="20260220 17:00:27.545"/>
+</kw>
+<for flavor="IN">
+<var>${locator}</var>
+<value>@{locators}</value>
+<iter>
+<var name="${locator}">//input[@type='password']</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${found}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:27.546" endtime="20260220 17:00:27.558"/>
+</kw>
+<msg timestamp="20260220 17:00:27.558" level="INFO">${found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:27.546" endtime="20260220 17:00:27.558"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>Set Test Variable</arg>
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20260220 17:00:27.560" level="INFO">${PASSWORD_INPUT_FOUND} = //input[@type='password']</msg>
+<status status="PASS" starttime="20260220 17:00:27.559" endtime="20260220 17:00:27.560"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:27.558" endtime="20260220 17:00:27.560"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>${found}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<msg timestamp="20260220 17:00:27.560" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20260220 17:00:27.560" endtime="20260220 17:00:27.560"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:27.546" endtime="20260220 17:00:27.560"/>
+</iter>
+<status status="PASS" starttime="20260220 17:00:27.546" endtime="20260220 17:00:27.560"/>
+</for>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:27.560" endtime="20260220 17:00:27.560"/>
+</kw>
+<msg timestamp="20260220 17:00:27.560" level="INFO">${password_found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:27.545" endtime="20260220 17:00:27.560"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${password_found}</arg>
+<arg>Password input field not found. Please check the login page structure.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260220 17:00:27.560" endtime="20260220 17:00:27.561"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260220 17:00:27.561" endtime="20260220 17:00:27.846"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:27.846" endtime="20260220 17:00:27.854"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20260220 17:00:27.854" endtime="20260220 17:00:27.864"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20260220 17:00:27.864" endtime="20260220 17:00:27.879"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${password}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT_FOUND}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20260220 17:00:27.880" level="INFO">Typing text 'wrongpassword' into text field '//input[@type='password']'.</msg>
+<status status="PASS" starttime="20260220 17:00:27.880" endtime="20260220 17:00:27.939"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:27.879" endtime="20260220 17:00:27.939"/>
+</kw>
+<kw name="Wait For Submit Button" library="keywords">
+<var>${submit_found}</var>
+<doc>Waits for submit button and stores the found locator</doc>
+<kw name="Create List" library="BuiltIn">
+<var>${locators}</var>
+<arg>//button[@type='submit']</arg>
+<arg>//button[contains(text(), 'เข้าสู่ระบบ')]</arg>
+<arg>//button[contains(text(), 'Login')]</arg>
+<arg>//button[contains(text(), 'Sign in')]</arg>
+<arg>//button[contains(text(), 'Log in')]</arg>
+<arg>//button[contains(@class, 'login') or contains(@class, 'submit')]</arg>
+<arg>//input[@type='submit']</arg>
+<arg>//form//button[last()]</arg>
+<arg>//form//button[@type='submit']</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20260220 17:00:27.940" level="INFO">${locators} = ["//button[@type='submit']", "//button[contains(text(), 'เข้าสู่ระบบ')]", "//button[contains(text(), 'Login')]", "//button[contains(text(), 'Sign in')]", "//button[contains(text(), 'Log in')]", "//but...</msg>
+<status status="PASS" starttime="20260220 17:00:27.940" endtime="20260220 17:00:27.940"/>
+</kw>
+<for flavor="IN">
+<var>${locator}</var>
+<value>@{locators}</value>
+<iter>
+<var name="${locator}">//button[@type='submit']</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${found}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20260220 17:00:30.664" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-570.png"&gt;&lt;img src="selenium-screenshot-570.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20260220 17:00:30.665" level="FAIL">Element '//button[@type='submit']' not visible after 2 seconds.</msg>
+<status status="FAIL" starttime="20260220 17:00:27.940" endtime="20260220 17:00:30.665"/>
+</kw>
+<msg timestamp="20260220 17:00:30.665" level="INFO">${found} = False</msg>
+<status status="PASS" starttime="20260220 17:00:27.940" endtime="20260220 17:00:30.665"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>Set Test Variable</arg>
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20260220 17:00:30.665" endtime="20260220 17:00:30.665"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>${found}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<status status="PASS" starttime="20260220 17:00:30.665" endtime="20260220 17:00:30.665"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:27.940" endtime="20260220 17:00:30.665"/>
+</iter>
+<iter>
+<var name="${locator}">//button[contains(text(), 'เข้าสู่ระบบ')]</var>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${found}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=2s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:30.665" endtime="20260220 17:00:30.674"/>
+</kw>
+<msg timestamp="20260220 17:00:30.675" level="INFO">${found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:30.665" endtime="20260220 17:00:30.675"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>Set Test Variable</arg>
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>${locator}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20260220 17:00:30.675" level="INFO">${SUBMIT_BUTTON_FOUND} = //button[contains(text(), 'เข้าสู่ระบบ')]</msg>
+<status status="PASS" starttime="20260220 17:00:30.675" endtime="20260220 17:00:30.675"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:30.675" endtime="20260220 17:00:30.675"/>
+</kw>
+<kw name="Return From Keyword If" library="BuiltIn">
+<arg>${found}</arg>
+<arg>${found}</arg>
+<doc>Returns from the enclosing user keyword if ``condition`` is true.</doc>
+<msg timestamp="20260220 17:00:30.675" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20260220 17:00:30.675" endtime="20260220 17:00:30.676"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:30.665" endtime="20260220 17:00:30.676"/>
+</iter>
+<status status="PASS" starttime="20260220 17:00:27.940" endtime="20260220 17:00:30.676"/>
+</for>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${False}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:30.676" endtime="20260220 17:00:30.676"/>
+</kw>
+<msg timestamp="20260220 17:00:30.676" level="INFO">${submit_found} = True</msg>
+<status status="PASS" starttime="20260220 17:00:27.939" endtime="20260220 17:00:30.676"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${submit_found}</arg>
+<arg>Submit button not found. Please check the login page structure.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20260220 17:00:30.676" endtime="20260220 17:00:30.676"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20260220 17:00:30.676" endtime="20260220 17:00:30.938"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20260220 17:00:30.938" endtime="20260220 17:00:30.949"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_enabled}</var>
+<arg>Element Should Be Enabled</arg>
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20260220 17:00:30.949" endtime="20260220 17:00:30.960"/>
+</kw>
+<msg timestamp="20260220 17:00:30.960" level="INFO">${is_enabled} = True</msg>
+<status status="PASS" starttime="20260220 17:00:30.949" endtime="20260220 17:00:30.960"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${is_enabled}</arg>
+<arg>Click Element</arg>
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>Submit button is disabled - form validation preventing submission (expected for empty credentials)</arg>
+<arg>level=INFO</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20260220 17:00:30.960" level="INFO">Clicking element '//button[contains(text(), 'เข้าสู่ระบบ')]'.</msg>
+<status status="PASS" starttime="20260220 17:00:30.960" endtime="20260220 17:00:31.012"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:30.960" endtime="20260220 17:00:31.012"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20260220 17:00:31.513" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20260220 17:00:31.012" endtime="20260220 17:00:31.514"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:26.514" endtime="20260220 17:00:31.514"/>
+</kw>
+<kw name="Verify Login Failed" library="keywords">
+<doc>Verifies that login failed by checking for error modal/message or disabled submit button</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${error_message_visible}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${ERROR_MESSAGE}</arg>
+<arg>timeout=3s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${ERROR_MESSAGE}</arg>
+<arg>timeout=3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20260220 17:00:31.514" endtime="20260220 17:00:31.522"/>
+</kw>
+<msg timestamp="20260220 17:00:31.522" level="INFO">${error_message_visible} = True</msg>
+<status status="PASS" starttime="20260220 17:00:31.514" endtime="20260220 17:00:31.522"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${error_message_visible}</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<msg timestamp="20260220 17:00:31.522" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20260220 17:00:31.522" endtime="20260220 17:00:31.522"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:31.522" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${error_modal_visible}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${ERROR_MODAL}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${error_modal_visible}</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${error_text_visible}</var>
+<arg>Page Should Contain</arg>
+<arg>The email or password provided is incorrect</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${error_text_visible}</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${error_text_partial}</var>
+<arg>Page Should Contain</arg>
+<arg>email or password</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${error_text_partial}</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${submit_found}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<var>${button_disabled}</var>
+<arg>${submit_found}</arg>
+<arg>Run Keyword And Return Status</arg>
+<arg>Element Should Be Disabled</arg>
+<arg>${SUBMIT_BUTTON_FOUND}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${False}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${button_disabled}</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${error_text_incorrect}</var>
+<arg>Page Should Contain</arg>
+<arg>incorrect</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${validation_visible}</var>
+<arg>Page Should Contain</arg>
+<arg>required</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${validation_visible_thai}</var>
+<arg>Page Should Contain</arg>
+<arg>กรุณา</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${result}</var>
+<arg>${error_modal_visible} or ${error_message_visible} or ${error_text_visible} or ${error_text_partial} or ${error_text_incorrect} or ${validation_visible} or ${validation_visible_thai} or ${button_disabled}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${result}</arg>
+<arg>Expected error message, validation, or disabled button not found. Login may have succeeded or error message format changed.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" starttime="20260220 17:00:31.523" endtime="20260220 17:00:31.523"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:31.514" endtime="20260220 17:00:31.523"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Take Screenshot On Failure</arg>
+<arg>AND</arg>
+<arg>Close BookAd Website</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Take Screenshot On Failure" library="keywords">
+<doc>Takes a screenshot when a test fails</doc>
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<arg>screenshots/failure-{index}.png</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20260220 17:00:31.524" endtime="20260220 17:00:31.524"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:31.524" endtime="20260220 17:00:31.524"/>
+</kw>
+<kw name="Close BookAd Website" library="keywords">
+<doc>Closes the browser</doc>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20260220 17:00:31.524" endtime="20260220 17:00:31.638"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:31.524" endtime="20260220 17:00:31.638"/>
+</kw>
+<status status="PASS" starttime="20260220 17:00:31.524" endtime="20260220 17:00:31.638"/>
+</kw>
+<doc>Test login with invalid username and password</doc>
+<tag>login</tag>
+<status status="PASS" starttime="20260220 17:00:19.693" endtime="20260220 17:00:31.638"/>
+</test>
+<doc>Test cases for login functionality</doc>
+<status status="PASS" starttime="20260220 17:00:00.953" endtime="20260220 17:00:31.639"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">login</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Test Login">Test Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
